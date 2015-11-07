@@ -26,21 +26,18 @@ import java.util.List;
 
 import ru.dikpost.pavlovtest.R;
 import ru.dikpost.pavlovtest.model.ListItem;
-import ru.dikpost.pavlovtest.model.Price;
 
 /**
  * Created by oracle on 11/6/15.
  */
-public class ImageAdapter extends   BaseAdapter /*ArrayAdapter<ListItem>*/ {
+public class ImageAdapter extends   BaseAdapter {
 
- //   private int layoutResId;
     private LayoutInflater inflater;
     private ImageLoadingListener animateFirstListener = new AnimateFirstDisplayListener();
     private ArrayList<ListItem> itemsList;
     private DisplayImageOptions options;
 
-   // public ImageAdapter(){}
-    public ImageAdapter(Context context,  ArrayList<ListItem> items) {
+    public ImageAdapter(Context context,  ArrayList<ListItem> items ) {
 
         itemsList = items;
         inflater = LayoutInflater.from(context);

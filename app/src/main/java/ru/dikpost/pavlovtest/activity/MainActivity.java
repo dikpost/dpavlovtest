@@ -9,16 +9,10 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.squareup.okhttp.ResponseBody;
-
-import java.io.IOException;
-
 import ru.dikpost.pavlovtest.R;
 import ru.dikpost.pavlovtest.common.Constants;
-import ru.dikpost.pavlovtest.common.StorageSingleton;
 import ru.dikpost.pavlovtest.fragment.DetailViewFragment;
 import ru.dikpost.pavlovtest.fragment.ImageListFragment;
-import ru.dikpost.pavlovtest.service.DataService;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,7 +22,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_main);
 
         int frIndex = getIntent().getIntExtra(Constants.Extra.FRAGMENT_INDEX, 0);
         int pos = getIntent().getIntExtra(Constants.Extra.DATA_POSITION, 0);
@@ -55,10 +48,6 @@ public class MainActivity extends AppCompatActivity {
 
         getFragmentManager().beginTransaction().replace(android.R.id.content, fr, tag).commit();
 
-       // if(StorageSingleton.getInstance().getData() == null ) {
-
-
-       // }
     }
 
 

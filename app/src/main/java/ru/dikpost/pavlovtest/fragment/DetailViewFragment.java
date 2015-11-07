@@ -1,10 +1,8 @@
 package ru.dikpost.pavlovtest.fragment;
 
 import android.app.Fragment;
-import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +12,7 @@ import android.widget.TextView;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
 import ru.dikpost.pavlovtest.R;
+import ru.dikpost.pavlovtest.common.Constants;
 import ru.dikpost.pavlovtest.common.StorageSingleton;
 import ru.dikpost.pavlovtest.model.Item;
 
@@ -22,7 +21,6 @@ import ru.dikpost.pavlovtest.model.Item;
  */
 public class DetailViewFragment extends Fragment {
 
- //   public static final String FRAGMENT_NAME = "detailViewFragment";
     public static final int INDEX = 1;
     int position;
 
@@ -48,9 +46,7 @@ public class DetailViewFragment extends Fragment {
         textDescr = (TextView) v.findViewById(R.id.item_desc);
         image = (ImageView) v.findViewById(R.id.item_image );
 
-        position = getArguments().getInt("position");
-        textDescr.setText("position = " + String.valueOf(position));
-
+        position = getArguments().getInt("position", 0);
         itemData = StorageSingleton.getInstance().getData().get( position );
         if( itemData != null){
 
@@ -58,7 +54,7 @@ public class DetailViewFragment extends Fragment {
             textDescr.setText( itemData.getTitle75() );
         }
 
-        Log.d("DetailViewFragment","args: " + position );
+        if( Constants.DEBUG ) Log.d("DetailViewFragment","args: " + position );
 
         return v;
     }

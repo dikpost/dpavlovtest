@@ -15,7 +15,6 @@ import retrofit.Callback;
 import retrofit.GsonConverterFactory;
 import retrofit.Response;
 import retrofit.Retrofit;
-import ru.dikpost.pavlovtest.activity.MainActivity;
 import ru.dikpost.pavlovtest.common.Constants;
 import ru.dikpost.pavlovtest.common.StorageSingleton;
 import ru.dikpost.pavlovtest.model.IncomData;

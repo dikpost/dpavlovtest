@@ -2,11 +2,7 @@
 package ru.dikpost.pavlovtest.model;
 
 
-//import javax.annotation.Generated;
-
-//@Generated("org.jsonschema2pojo")
 import com.google.gson.annotations.Expose;
-//import com.google.gson.annotations.SerializedName;
 
 public class Price {
 
